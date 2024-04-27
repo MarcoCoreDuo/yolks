@@ -25,7 +25,6 @@ jobs:
           buildkitd-flags: --debug
       - uses: docker/login-action@v3
         with:
-          registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.REGISTRY_TOKEN }}
       - uses: docker/build-push-action@v5
@@ -35,4 +34,4 @@ jobs:
           platforms: linux/arm64
           push: true
           tags: |
-            ghcr.io/parkervcp/yolks:${{ matrix.tag }}
+            marcocoreduo/pterodactyl_images:${{ matrix.tag }}
